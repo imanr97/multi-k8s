@@ -19,6 +19,7 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker build -t imanr76/react-test -f ./client/Dockerfile.dev ./client
 
+
 script:
   - docker run -e CI=true imanr76/react-test npm test
 
